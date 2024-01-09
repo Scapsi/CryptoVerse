@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { useGetCryptoListQuery } from '../services/CryptoApi';
 import Loader from './Loader';
+import News from './News';
+import Cryptocurrencies from './Cryptocurrencies';
 
 const { Title } = Typography;
 const Homepage = () => {
@@ -30,13 +32,13 @@ const Homepage = () => {
         <Col span={12}>
           <Statistic
             title="Total Market Cap"
-            value={millify(globalStats.totalMarketCap)}
+            value={`$${millify(globalStats.totalMarketCap)}`}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total 24h Volume"
-            value={millify(globalStats.total24hVolume)}
+            value={`$${millify(globalStats.total24hVolume)}`}
           />
         </Col>
         <Col span={12}>
@@ -46,6 +48,17 @@ const Homepage = () => {
           />
         </Col>
       </Row>
+      <div className='home-heading-container'>
+        <Title level={2} className='home-title'>Top 10 Cryptocurrencies in the world</Title>
+        <Title level={3} className='show-more'><Link to='/cryptocurrencies'>Show More</Link></Title>
+      </div>
+      <Cryptocurrencies simplified/>
+
+      <div className='home-heading-container'>
+        <Title level={2} className='home-title'>Latests Crypto News</Title>
+        <Title level={3} className='show-more'><Link to='/news'>Show More</Link></Title>
+      </div>
+      <News simplified/>
     </>
   );
 };
