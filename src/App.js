@@ -1,16 +1,15 @@
 import React from 'react';
 import { Layout, Typography, Space } from 'antd';
+import './App.css';
+
+import { Link, Route, Routes } from 'react-router-dom';
 import {
   CryptoDetails,
   Cryptocurrencies,
-  Exchanges,
   Homepage,
   Navbar,
   News,
 } from './components';
-import './App.css';
-
-import { Link, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -23,8 +22,6 @@ const App = () => {
           <div className="routes">
             <Routes>
               <Route exact path="/" element={<Homepage />} />
-
-              <Route exact path="/exchanges" element={<Exchanges />} />
 
               <Route
                 exact

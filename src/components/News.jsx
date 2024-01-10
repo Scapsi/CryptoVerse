@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
-import moment from 'moment';
+import moment from 'moment'
 
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
-import Loader from './Loader';
+
 import { useGetCryptoListQuery } from '../services/CryptoApi';
+import Loader from './Loader';
 
 const demoImage =
   'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
@@ -68,7 +69,7 @@ const News = ({ simplified }) => {
                       news.provider[0]?.image?.thumbnail?.contentUrl ||
                       demoImage
                     }
-                    alt=""
+                    alt="news"
                   />
                   <Text className="provider-name">
                     {news.provider[0]?.name}

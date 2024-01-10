@@ -1,8 +1,6 @@
-import Navbar from './Navbar';
-import Cryptocurrencies from './Cryptocurrencies';
-import CryptoDetails from './CryptoDetails';
-import Exchanges from './Exchanges';
-import Homepage from './Homepage';
-import News from './News';
+export { default as Homepage } from './Homepage';
+export { default as Navbar } from './Navbar';
+export { default as News } from './News';
+export { default as Cryptocurrencies } from './Cryptocurrencies';
 
-export { Navbar, CryptoDetails, Cryptocurrencies, Exchanges, Homepage, News };
+export { default as CryptoDetails } from './CryptoDetails';

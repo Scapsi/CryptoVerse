@@ -6,7 +6,7 @@ const cryptoApiHeaders = {
 };
 const baseUrl = 'https://coinranking1.p.rapidapi.com';
 
-const createRequest = (url) => ({ url, headers: cryptoApiHeaders   });
+const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
 
 export const cryptoApi = createApi({
   reducerPath: 'cryptoApi',
@@ -22,6 +22,7 @@ export const cryptoApi = createApi({
       query: ({ coinId, timePeriod }) =>
         createRequest(`/coin/${coinId}/history?timePeriod=${timePeriod}`),
     }),
+    // Note: To access this endpoint you need premium plan
     getExchanges: builder.query({
       query: () => createRequest(`/exchanges`),
     }),
